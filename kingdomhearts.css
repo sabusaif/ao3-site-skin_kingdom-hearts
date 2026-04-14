@@ -1,37 +1,34 @@
 #header {
   position: relative;
-  background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD.jpg?name=large');
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
-  animation: background-change 10s infinite;
-  animation-fill-mode: backwards;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out 0s; 
 }
 
-@keyframes background-change {
-  0% {
-    background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD?format=jpg&name=large');
-  }
-  33% {
-    background-image: url('https://pbs.twimg.com/media/FA8g_SLWYAEe_qD?format=jpg&name=large');
-  }
-  66% {
-    background-image: url('https://pbs.twimg.com/media/FA8W5Y7XEAkgGbr?format=jpg&name=large');
-  }
-  100% {
-    background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD?format=jpg&name=large');
-  }
+#header:has(#site_search:focus) {
+  background-image: url('https://kh.wiki.gallery/images/thumb/a/a2/Promotional_Art_01_KHMOM.png/800px-Promotional_Art_01_KHMOM.png');
 }
+
 
 #header::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: url('https://files.catbox.moe/a70to3.png');
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/a70to3.png');
   background-repeat: no-repeat;
   background-size: 20em;
   background-position: bottom;
-  filter: drop-shadow(0 0 15px rgb(5 5 5 / 50%));
+  transition: background-image 0.5s ease-in-out 0s;
+}
+
+#header:has(#site_search:focus)::before {
+  background-position: top;
+  background-image: url('https://pbs.twimg.com/media/EvXQrkkWQAEG8v1.png:large');
 }
 
 #header .heading {
