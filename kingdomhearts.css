@@ -1,5 +1,39 @@
 #header {
-  background-image: url('https://pbs.twimg.com/media/G1OWMOMbgAAXkRY?format=jpg&name=large');
+  position: relative;
+  background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD.jpg?name=large');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top;
+  animation: background-change 10s infinite;
+  animation-fill-mode: backwards;
+}
+
+@keyframes background-change {
+  0% {
+    background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD?format=jpg&name=large');
+  }
+  33% {
+    background-image: url('https://pbs.twimg.com/media/FA8g_SLWYAEe_qD?format=jpg&name=large');
+  }
+  66% {
+    background-image: url('https://pbs.twimg.com/media/FA8W5Y7XEAkgGbr?format=jpg&name=large');
+  }
+  100% {
+    background-image: url('https://pbs.twimg.com/media/EYaiRGUUYAAImuD?format=jpg&name=large');
+  }
+}
+
+#header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://files.catbox.moe/a70to3.png');
+  background-repeat: no-repeat;
+  background-size: 20em;
+  background-position: bottom;
+  filter: drop-shadow(0 0 15px rgb(5 5 5 / 50%));
+}
+
+#header .heading {
+  height: 23.5em;
 }
