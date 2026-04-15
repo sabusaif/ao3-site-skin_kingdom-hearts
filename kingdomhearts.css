@@ -1,16 +1,11 @@
 #header {
   position: relative;
+  background-color: #0c0c0c;
   background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  background-size: auto 100%;
   background-position: center;
-  transition: background-image 0.5s ease-in-out 0s; 
 }
-
-#header:has(#site_search:focus) {
-  background-image: url('https://kh.wiki.gallery/images/thumb/a/a2/Promotional_Art_01_KHMOM.png/800px-Promotional_Art_01_KHMOM.png');
-}
-
 
 #header::before {
   content: "";
@@ -23,14 +18,17 @@
   background-repeat: no-repeat;
   background-size: 20em;
   background-position: bottom;
-  transition: background-image 0.5s ease-in-out 0s;
-}
-
-#header:has(#site_search:focus)::before {
-  background-position: top;
-  background-image: url('https://pbs.twimg.com/media/EvXQrkkWQAEG8v1.png:large');
+  pointer-events: none;
 }
 
 #header .heading {
   height: 23.5em;
+}
+
+#login {
+  background: none;
+}
+
+#header a {
+  color: #f7f5f4;
 }
