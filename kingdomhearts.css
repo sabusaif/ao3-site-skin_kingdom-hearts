@@ -1,7 +1,7 @@
 #header {
   position: relative;
   background-color: #0c0c0c;
-  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/kh_background.gif');
   background-size: auto 100%;
   background-position: center;
 }
@@ -13,7 +13,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/a70to3.png');
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/sora.png');
   background-repeat: no-repeat;
   background-size: 20em;
   background-position: bottom;
@@ -45,7 +45,7 @@
   right: 0;
   bottom: 0;
   left: 50%;
-  background-image: url('https://i.redd.it/ufhz2hg3oo521.png');
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/title.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom;
@@ -65,5 +65,5 @@
 }
 
 #header .logo, #header h1 sup, #header h1 a span {
-  display: none !important;
+  display: none;
 }
