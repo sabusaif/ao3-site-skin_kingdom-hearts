@@ -21,7 +21,6 @@
 
 #header .heading {
   height: 23.5em;
-  position: relative; /* used to make link clickable */
 }
 
 #login {
@@ -30,4 +29,22 @@
 
 #header a {
   color: #f7f5f4;
+}
+
+#header h1 a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 5%;
+  left: 0;
+  background-image: url('https://i.redd.it/ufhz2hg3oo521.png');
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: bottom;
+  opacity: 65%;
+}
+
+#header .logo, #header h1 sup, #header h1 a span {
+  display: none !important;
 }
