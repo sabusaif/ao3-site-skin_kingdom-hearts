@@ -2,7 +2,6 @@
   position: relative;
   background-color: #0c0c0c;
   background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
-  /*background-repeat: no-repeat;*/
   background-size: auto 100%;
   background-position: center;
 }
@@ -18,11 +17,11 @@
   background-repeat: no-repeat;
   background-size: 20em;
   background-position: bottom;
-  pointer-events: none;
 }
 
 #header .heading {
   height: 23.5em;
+  position: relative; /* used to make link clickable */
 }
 
 #login {
