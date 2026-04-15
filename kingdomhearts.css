@@ -23,6 +23,11 @@
   height: 23.5em;
 }
 
+#header .user {
+  padding: 0;
+  margin: 0.429em 0;
+}
+
 #login {
   background: none;
 }
@@ -34,15 +39,29 @@
 #header h1 a::before {
   content: "";
   position: absolute;
-  top: 0;
+  width: 20em;
+  height: 7em;
+  top: 54.5%;
   right: 0;
-  bottom: 5%;
-  left: 0;
+  bottom: 0;
+  left: 50%;
   background-image: url('https://i.redd.it/ufhz2hg3oo521.png');
   background-repeat: no-repeat;
-  background-size: 75%;
+  background-size: 100%;
   background-position: bottom;
   opacity: 65%;
+  background-blend-mode: darken;
+  transform: translate(-50%);
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  #header h1 a::before {
+    width: 17em;
+    height: 5.5em;
+    top: 59%;
+    bottom: 6%;
+    background-size: 90%;
+  }
 }
 
 #header .logo, #header h1 sup, #header h1 a span {
