@@ -32,12 +32,12 @@
   background: none;
 }
 
-#header a {
+#header #login-dropdown {
   color: #f7f5f4;
 }
 
-#header h1 a span::before {
-  content: "Testing";
+#header h1 a::before {
+  content: "";
   position: absolute;
   width: 20em;
   height: 7em;
@@ -63,22 +63,27 @@
   }
 }
 
+#header .logo, #header h1 sup, #header h1 a span {
+  display: none;
+}
+
 #login {
   margin-right: 0.429em;
 }
 
 #login .open a {
   background-color: transparent !important;
-  color: #2A2A2A;
+  color: #2A2A2A !important;
   visibility: hidden;
 }
 
 #login .open a::after {
   content: "Close";
-  background-image: url('https://i.redd.it/nrxo01nlwpfe1.gif');
   visibility: visible;
 }
 
-#header .logo, #header h1 sup, #header h1 a span {
-  display: none !important;
+#small_login {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd6iy8p-22b33d93-e395-476e-bd0c-6e085ca4a0ac.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ2aXk4cC0yMmIzM2Q5My1lMzk1LTQ3NmUtYmQwYy02ZTA4NWNhNGEwYWMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lMMYRivtpt-33CtAe8rwmzF6PrS9nhe_sI9cPaGkjAU');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
