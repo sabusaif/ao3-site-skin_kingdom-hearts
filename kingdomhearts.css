@@ -132,11 +132,12 @@
   border-bottom: none;
   border-right: none;
   border-color: #64666c;
-  padding-left: 1em;
+  
   border-top-width: 0.15em;
   border-left-width: 0.15em;
   box-shadow: none;
 
+  padding-left: 1em;
   color: white;
 }
 
@@ -161,6 +162,73 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+#small_login .submit {
+  position: relative;
+}
+
+#small_login .submit label {
+  padding-left: 2em;
+  padding-top: 0.4em;
+  padding-bottom: 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 0.1em #111111;
+  background: none;
+  color: white;
+}
+
+#small_login .submit label:hover {
+  cursor: pointer;
+  box-shadow: none;
+}
+
+#small_login .submit input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  border: none;  
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.786em;
+  width: 1.786em;
+  background-color: #e0e0e0;
+  /*border: solid #111111 0.3em;*/
+  box-shadow:
+    inset 0 0 0 0.4em #000000,
+    inset 0 0.5em 0 0 #9d9d9d,
+    inset 0.5em 0 0 0 #9d9d9d;
+
+  border-radius: 0;
+}
+
+#small_login .submit input[type="checkbox"]:checked {  
+  box-shadow:
+    inset 0 0 0.5em 0.2em #000000,
+    inset 0 0 0 0.4em #c17446,
+    inset 0 0.5em 0 0 #fdc94e,
+    inset 0.5em 0 0 0 #fdc94e;
+  background-color: #fdf9b2;
+}
+
+#small_login .submit input:hover, #small_login .submit input:focus {
+  cursor: pointer;
+}
+
+#small_login .submit input[type="submit"] {
+  padding-left: 1em;
+  clip-path: polygon(1em 0%, 100% 0%, 100% 100%, 0% 100%, 0% 1em);
+  background: none;
+  border: none;
+  background-color: #111111;
+  color: white;
+  border: solid #a24247 0.15em;
+}
+
+#small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus {
+  box-shadow: none;
 }
 
 .summary .heading {
