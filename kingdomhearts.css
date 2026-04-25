@@ -49,7 +49,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom;
-  -opacity: 65%;
+  opacity: 65%;
   transform: translate(-50%);
 }
 
@@ -81,12 +81,20 @@
 #login .open a::after {
   content: "X";
   visibility: visible;
+  /*
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-image: url('https://i1.sndcdn.com/avatars-000204947105-ywszz8-t500x500.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  */
 }
 
 #small_login {
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgb(255 255 255 / 5%);
   /*background-color: transparent;*/
   background-image: 
     url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd6iy8p-22b33d93-e395-476e-bd0c-6e085ca4a0ac.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ2aXk4cC0yMmIzM2Q5My1lMzk1LTQ3NmUtYmQwYy02ZTA4NWNhNGEwYWMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lMMYRivtpt-33CtAe8rwmzF6PrS9nhe_sI9cPaGkjAU'),
@@ -102,36 +110,66 @@
   background-position: bottom -3em right -6.2em, 0 0;
   backdrop-filter: blur(0.04em);
   
-  border: solid 3em;
-  border-image: linear-gradient(to bottom, #010000, #11103b, #010000) 127;
-  border-left: none;
-  border-right: none;
+  border: solid 0.15em #a24247;
   box-shadow:
-    inset 0 0.15em 0 0 #4d49c9,
-    inset 0 -0.15em 0 0 #4d49c9;
-  
-  /*
-  border: solid 0.15em #4d49c9;
-  box-shadow:
-    inset 0 0 0 0.05em #000077,
-    0 0 0 0.05em #000077,
-    0 0 1.5em #4d49c9;
+    inset 0 0 0 0.05em #770000,
+    0 0 0 0.05em #770000,
+    0 0 1.5em #a24247;
   border-radius: 0.5em;
-  */
 }
 
-
 #small_login form {
-  margin: 0;
+  margin-top: 1em;
 }
 
 #user_session_login_small, #user_session_password_small {
+  display: block;
+  width: 90%;
   border-top-left-radius: 1em;
   border-bottom-right-radius: 1em;
-  background-color: #050709;
+  background-color: #111111;
   border-bottom: none;
   border-right: none;
   border-color: #64666c;
+  padding-left: 1em;
+  -border-top-width: 0.1em;
 
+  color: white;
+}
+
+#user_session_login_small:focus, #user_session_password_small:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #d50b11;
+}
+
+#small_login dl {
+  height: 6.6em;
+}
+
+#small_login dd {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.summary .heading {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd8mpzh-00896cbc-f186-4349-b4c2-d065fcbe6ae7.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ4bXB6aC0wMDg5NmNiYy1mMTg2LTQzNDktYjRjMi1kMDY1ZmNiZTZhZTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DR1_srJbgDUtdVvyMZLO-xfSomIipbum6hhR24noo0s');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 5em;
+  align-content: end;
+}
+
+.notes .heading {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd8rl5f-e45c5b37-5631-4432-a631-1ea9c7ebcc90.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ4cmw1Zi1lNDVjNWIzNy01NjMxLTQ0MzItYTYzMS0xZWE5YzdlYmNjOTAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cBK54RVl-tItB0XjUCeI-V73C4htk9GKwFLMD2lk418');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 6em;
+  align-content: end;
+}
+
+#small_login dt {
   color: white;
 }
