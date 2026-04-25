@@ -138,7 +138,6 @@
   width: 22em;
   text-shadow: 0.075em 0.075em 0 black;
   transform: translate(1em);
-  pointer-events: none;
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
   background-color: rgba(255, 255, 255, 0.05);
@@ -162,15 +161,15 @@
     0 0 0 0.05em #770000,
     0 0 1.5em #a24247;
   border-radius: 0.5em;
+  visibility: hidden;
 
-  transition: opacity 0.3s linear , transform 0.4s ease-out;
+  transition: opacity 0.3s linear , all 0.4s ease-out;
 }
 
 .open + #small_login {
   opacity: 1;
-  mask-position: right;
+  visibility: visible;
   transform: translateX(0);
-  pointer-events: auto;
 }
 
 #small_login form {
@@ -185,6 +184,7 @@
 .open + #small_login form, .open + #small_login ul {
   transform: translateY(0);
 }
+
 
 #user_session_login_small, #user_session_password_small {
   width: 90%;
