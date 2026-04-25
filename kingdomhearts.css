@@ -124,8 +124,8 @@
   background-image: url('https://github.com/Televo/kingdom-hearts-recollection/blob/main/Minimal/Worlds/Simulated%20Twilight%20Town.png?raw=true');
   background-size: contain;
   background-repeat: no-repeat;
-  filter: brightness(100);
   opacity: 1;
+  filter: brightness(100) drop-shadow(1px 1px 0 black) ;
 }
 
 #login .open #login-dropdown:hover {
@@ -135,6 +135,8 @@
 #small_login {
   display: block;
   opacity: 0;
+  width: 22em;
+  text-shadow: 0.075em 0.075em 0 black;
   transform: translate(1em);
   pointer-events: none;
   padding: 0.475em 0.5em 0.475em 0.5em;
@@ -150,9 +152,9 @@
       rgba(200 200 200 / 20%) 1.5px,
       rgba(200 200 200 / 20%) 3px
     );
-  background-size: 90%, 100% 6px;
+  background-size: 87%, 100% 6px;
   background-repeat: no-repeat, repeat;
-  background-position: bottom -3em right -6.2em, 0 0;
+  background-position: bottom -3em right -6.9em, 0 0;
   
   border: solid 0.15em #a24247;
   box-shadow:
@@ -161,7 +163,7 @@
     0 0 1.5em #a24247;
   border-radius: 0.5em;
 
-  transition: opacity 0.3s linear  0.1s, transform 0.4s ease-out;
+  transition: opacity 0.3s linear , transform 0.4s ease-out;
 }
 
 .open + #small_login {
@@ -221,6 +223,7 @@
 #small_login dt {
   margin-bottom: 0.3em;
   color: white;
+  margin-left: 1.3em;
 }
 
 #small_login dd {
@@ -288,19 +291,29 @@
 }
 
 #small_login .submit input[type="submit"] {
-  background: none;
-  background-color: #111111;
-  background-size: 100%;
-  background-position: auto;
+  padding-top: 0.4em;
+  padding-left: 1em;
+  padding-right: 2.5em;
+
   color: #fefcff;
-  border: none;
-  border: solid #a24247 0.15em;
-  transition: transform 0.2s linear;
+  text-shadow: 0.075em 0.075em 0 black;
+
+  border: solid 0.2em transparent;
+  border-left-width: 0.8em;
+  border-radius: 0;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  
+  background:
+    url('https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/login/keyblade_icon.png?raw=true') no-repeat right 0.5em center / 1.5em,
+
+    linear-gradient(135deg, #a63a46 0, #a63a46 13%, transparent 5%) padding-box,
+    linear-gradient(to bottom, #1f0000 40%, #910000 80%) padding-box,
+    linear-gradient(135deg, transparent 10%, #a63a46 0) border-box;
 }
 
 #small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus {
   box-shadow: none;
-  transform: scale(1.1);
 }
 
 #small_login li a {
@@ -323,4 +336,10 @@
   background-position: right bottom;
   height: 6em;
   align-content: end;
+}
+
+::selection {
+  background: #8e4141;
+  color: white;
+  text-shadow: none;
 }
