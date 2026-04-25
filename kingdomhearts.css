@@ -75,7 +75,7 @@
   background-color: transparent !important;
   /*color: #2A2A2A !important;*/
   visibility: hidden;
-  margin: 1em 1em 0 0;
+  margin: 1.2em 1.2em 0 0;
 }
 
 #login .open a::after {
@@ -84,8 +84,9 @@
 }
 
 #small_login {
+  padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
-  background-color: rgb(255 255 255 / 20%);
+  background-color: rgb(255 255 255 / 10%);
   /*background-color: transparent;*/
   background-image: 
     url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd6iy8p-22b33d93-e395-476e-bd0c-6e085ca4a0ac.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ2aXk4cC0yMmIzM2Q5My1lMzk1LTQ3NmUtYmQwYy02ZTA4NWNhNGEwYWMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lMMYRivtpt-33CtAe8rwmzF6PrS9nhe_sI9cPaGkjAU'),
@@ -93,21 +94,44 @@
       to bottom,
       rgba(234 234 234 / 20%) 0px,
       rgba(234 234 234 / 20%) 1.5px,
-      rgba(26 71 130 / 20%) 1.5px,
-      rgba(26 71 130 / 20%) 3px
+      rgb(200 200 200 / 20%) 1.5px,
+      rgba(200 200 200 / 20%) 3px
     );
   background-size: 90%, 100% 6px;
   background-repeat: no-repeat, repeat;
   background-position: bottom -3em right -6.2em, 0 0;
   backdrop-filter: blur(0.04em);
+  
+  border: solid 3em;
+  border-image: linear-gradient(to bottom, #010000, #11103b, #010000) 127;
+  border-left: none;
+  border-right: none;
+  box-shadow:
+    inset 0 0.15em 0 0 #4d49c9,
+    inset 0 -0.15em 0 0 #4d49c9;
+  
+  /*
   border: solid 0.15em #4d49c9;
   box-shadow:
     inset 0 0 0 0.05em #000077,
     0 0 0 0.05em #000077,
     0 0 1.5em #4d49c9;
   border-radius: 0.5em;
+  */
 }
 
-body {
-  cursor: url('https://mail.google.com/mail/u/0?ui=2&ik=a6b752d222&attid=0.3&permmsgid=msg-f:1862599569870525500&th=19d94870b8ed943c&view=fimg&fur=ip&permmsgid=msg-f:1862599569870525500&sz=s0-l75-ft&attbid=ANGjdJ8uCWzWonEx12M0Y4R-wVPw1VEfyO59LteTpqeVRvI0EfWrxPdTqz61yHAJsdTE85cbLtRPcAUE7WGHKqACv6DzLinmrJUhDKhPP1sBtZ1tZRUWcqOKVGoV-KA&disp=emb&realattid=ii_mo0z3m662&zw'), pointer !important;
+
+#small_login form {
+  margin: 0;
+}
+
+#user_session_login_small, #user_session_password_small {
+  border-top-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: #050709;
+  border-bottom: none;
+  border-right: none;
+  border-color: #64666c;
+
+  color: white;
 }
