@@ -1,7 +1,7 @@
 #header {
   position: relative;
   background-color: #0c0c0c;
-  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/kh_background.gif');
+  background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
   background-size: auto 100%;
   background-position: center;
 }
@@ -71,31 +71,53 @@
   margin-right: 0.429em;
 }
 
-#login .open a {
+#login #login-dropdown {
+  transform: translateY(0);
+}
+
+#login .open #login-dropdown {
   background-color: transparent !important;
   /*color: #2A2A2A !important;*/
   visibility: hidden;
   margin: 1.2em 1.2em 0 0;
+  transition: filter 0.25s ease;
 }
 
-#login .open a::after {
+
+#login #login-dropdown::after {
+  content: "";
+  filter: brightness(100);
+  opacity: 0;
+  transform: translateX(1em);
+  transition: opacity 0.3s linear 0.1s, transform 0.4s ease-out;
+}
+
+#login .open #login-dropdown::after {
   content: "";
   visibility: visible;
-  
   display: inline-block;
+  transform: translateX(0);
   width: 2em;
   height: 2em;
   background-image: url('https://github.com/Televo/kingdom-hearts-recollection/blob/main/Minimal/Worlds/Simulated%20Twilight%20Town.png?raw=true');
   background-size: contain;
   background-repeat: no-repeat;
-  filter: brightness(100) drop-shadow(0 0 0.8em #ff6969);
-  
+  filter: brightness(100);
+  opacity: 1;
+}
+
+#login .open #login-dropdown:hover {
+  filter: drop-shadow(0 0 0.8em #ff6969);
 }
 
 #small_login {
+  display: block;
+  opacity: 0;
+  transform: translateX(1em);
+  pointer-events: none;
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
-  background-color: rgb(255 255 255 / 5%);
+  background-color: rgba(255, 255, 255, 0.05);
   /*background-color: transparent;*/
   background-image: 
     url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd6iy8p-22b33d93-e395-476e-bd0c-6e085ca4a0ac.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ2aXk4cC0yMmIzM2Q5My1lMzk1LTQ3NmUtYmQwYy02ZTA4NWNhNGEwYWMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lMMYRivtpt-33CtAe8rwmzF6PrS9nhe_sI9cPaGkjAU'),
@@ -103,7 +125,7 @@
       to bottom,
       rgba(234 234 234 / 20%) 0px,
       rgba(234 234 234 / 20%) 1.5px,
-      rgb(200 200 200 / 20%) 1.5px,
+      rgba(200 200 200 / 20%) 1.5px,
       rgba(200 200 200 / 20%) 3px
     );
   background-size: 90%, 100% 6px;
@@ -117,6 +139,15 @@
     0 0 0 0.05em #770000,
     0 0 1.5em #a24247;
   border-radius: 0.5em;
+
+  transition: opacity 0.3s linear  0.1s, transform 0.4s ease-out;
+}
+
+.open + #small_login {
+  opacity: 1;
+  mask-position: right;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 #small_login form {
@@ -169,18 +200,23 @@
 }
 
 #small_login .submit label {
-  padding-left: 2em;
+  padding-left: 2.1em;
   padding-top: 0.4em;
   padding-bottom: 0;
   border: none;
   border-radius: 0;
-  border-bottom: solid 0.1em #111111;
-  background: none;
+  border-bottom: solid 0.2em;
+  border-image: linear-gradient(to right, #111111 30%, transparent 70%) 1;
   color: white;
+  background: linear-gradient(to right, transparent 20%, #a24247 55%, transparent 80%);
+  background-size: 170%;
+  background-position: left;
+  transition: background-position 0.5s ease-in-out;
 }
 
 #small_login .submit label:hover {
   cursor: pointer;
+  background-position: right;
   box-shadow: none;
 }
 
@@ -192,21 +228,21 @@
   top: 0;
   bottom: 0;
   left: 0;
-  height: 1.786em;
-  width: 1.786em;
+  height: 1.886em;
+  width: 1.886em;
   background-color: #e0e0e0;
   /*border: solid #111111 0.3em;*/
   box-shadow:
-    inset 0 0 0 0.4em #000000,
+    inset 0 0 0 0.4em #111111,
     inset 0 0.5em 0 0 #9d9d9d,
-    inset 0.5em 0 0 0 #9d9d9d;
-
+    inset 0.5em 0 0 0 #9d9d9d,
+    inset 0 0 0 0 rgba(0,0,0,0);
   border-radius: 0;
 }
 
 #small_login .submit input[type="checkbox"]:checked {  
   box-shadow:
-    inset 0 0 0.5em 0.2em #000000,
+    inset 0 0 0.5em 0.2em #111111,
     inset 0 0 0 0.4em #c17446,
     inset 0 0.5em 0 0 #fdc94e,
     inset 0.5em 0 0 0 #fdc94e;
