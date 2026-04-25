@@ -36,8 +36,8 @@
   color: #f7f5f4;
 }
 
-#header h1 a::before {
-  content: "";
+#header h1 a span::before {
+  content: "Testing";
   position: absolute;
   width: 20em;
   height: 7em;
@@ -50,7 +50,6 @@
   background-size: 100%;
   background-position: bottom;
   opacity: 65%;
-  background-blend-mode: darken;
   transform: translate(-50%);
 }
 
@@ -64,6 +63,22 @@
   }
 }
 
+#login {
+  margin-right: 0.429em;
+}
+
+#login .open a {
+  background-color: transparent !important;
+  color: #2A2A2A;
+  visibility: hidden;
+}
+
+#login .open a::after {
+  content: "Close";
+  background-image: url('https://i.redd.it/nrxo01nlwpfe1.gif');
+  visibility: visible;
+}
+
 #header .logo, #header h1 sup, #header h1 a span {
-  display: none;
+  display: none !important;
 }
