@@ -33,7 +33,7 @@
 }
 
 #header /*#login-dropdown*/ a {
-  color: #f7f5f4 !important;
+  /*color: #f7f5f4 !important;*/
 }
 
 #header h1 a::before {
@@ -72,14 +72,35 @@
 }
 
 #login #login-dropdown {
+  color: white;
+   border-radius: 0.5em;
+  top: 0.4em;
+  right: 0.4em;
   transform: translateY(0);
+  transition:
+    transform 0.4s ease, opacity 0.4s ease,
+    color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+}
+
+#login #login-dropdown:hover, #header .actions #login-dropdown:focus {
+  background-color: #dbdbdbcc;
+  color: #111111;
+  outline: none;
+  box-shadow:
+    inset 0 0 0 0.05em #770000,
+    0 0 0 0.15em #a24247,
+    0 0 0 0.2em #770000,
+    0 0 1.5em #a24247;
+  text-shadow: 0 0 0.2em #585858ad;
 }
 
 #login .open #login-dropdown {
-  background-color: transparent !important;
-  /*color: #2A2A2A !important;*/
+  transform: translateY(1em);
   visibility: hidden;
-  margin: 1.2em 1.2em 0 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
   transition: filter 0.25s ease;
 }
 
@@ -96,7 +117,8 @@
   content: "";
   visibility: visible;
   display: inline-block;
-  transform: translateX(0);
+  margin: 0.8em 0.8em 0 0;
+  transform: translate(0, -1em);
   width: 2em;
   height: 2em;
   background-image: url('https://github.com/Televo/kingdom-hearts-recollection/blob/main/Minimal/Worlds/Simulated%20Twilight%20Town.png?raw=true');
@@ -113,7 +135,7 @@
 #small_login {
   display: block;
   opacity: 0;
-  transform: translateX(1em);
+  transform: translate(1em);
   pointer-events: none;
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
@@ -131,7 +153,6 @@
   background-size: 90%, 100% 6px;
   background-repeat: no-repeat, repeat;
   background-position: bottom -3em right -6.2em, 0 0;
-  backdrop-filter: blur(0.04em);
   
   border: solid 0.15em #a24247;
   box-shadow:
@@ -154,30 +175,43 @@
   margin-top: 1em;
 }
 
-#user_session_login_small, #user_session_password_small {
-  display: block;
-  width: 90%;
-  border-top-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  background-color: #111111;
-  border-bottom: none;
-  border-right: none;
-  border-color: #64666c;
-  
-  border-top-width: 0.15em;
-  border-left-width: 0.15em;
-  box-shadow: none;
-
-  padding-left: 1em;
-  color: white;
+#small_login form, #small_login ul {
+  transform: translateY(0.5em);
+  transition: transform 0.4s ease-out;
 }
 
-#user_session_login_small:focus, #user_session_password_small:focus {
-  outline: none;
+.open + #small_login form, .open + #small_login ul {
+  transform: translateY(0);
+}
+
+#user_session_login_small, #user_session_password_small {
+  width: 90%;
+}
+
+#user_session_login_small, #user_session_password_small, #site_search {
+  background: none;
+  background-color: #111111;
+  
+  border-radius: 0;
+  border-top-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  
+  border-bottom: none;
+  border-right: none;
+  border-top: solid 0.15em #64666c !important;
+  border-left: solid 0.15em #64666c !important;
+  
+  box-shadow: none;
+  padding-left: 1em;
+  color: white !important;
+}
+
+#user_session_login_small:focus, #user_session_password_small:focus, #site_search:focus {
+  outline: none !important;
   box-shadow: 0 0 0 2px #d50b11;
   background: linear-gradient(to bottom, #111111, #3c0001);
-  border-right: solid #111111 0.3em;
-  border-bottom: solid #111111 0.3em;
+  border-right: solid #111111 0.3em !important;
+  border-bottom: solid #111111 0.3em !important;
 }
 
 #small_login dl {
@@ -254,17 +288,23 @@
 }
 
 #small_login .submit input[type="submit"] {
-  padding-left: 1em;
-  clip-path: polygon(1em 0%, 100% 0%, 100% 100%, 0% 100%, 0% 1em);
   background: none;
-  border: none;
   background-color: #111111;
-  color: white;
+  background-size: 100%;
+  background-position: auto;
+  color: #fefcff;
+  border: none;
   border: solid #a24247 0.15em;
+  transition: transform 0.2s linear;
 }
 
 #small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus {
   box-shadow: none;
+  transform: scale(1.1);
+}
+
+#small_login li a {
+  color: white !important;
 }
 
 .summary .heading {
