@@ -33,7 +33,7 @@
 }
 
 #header /*#login-dropdown*/ a {
-  color: #f7f5f4;
+  color: #f7f5f4 !important;
 }
 
 #header h1 a::before {
@@ -79,16 +79,17 @@
 }
 
 #login .open a::after {
-  content: "X";
+  content: "";
   visibility: visible;
-  /*
+  
   display: inline-block;
   width: 2em;
   height: 2em;
-  background-image: url('https://i1.sndcdn.com/avatars-000204947105-ywszz8-t500x500.jpg');
+  background-image: url('https://github.com/Televo/kingdom-hearts-recollection/blob/main/Minimal/Worlds/Simulated%20Twilight%20Town.png?raw=true');
   background-size: contain;
   background-repeat: no-repeat;
-  */
+  filter: brightness(100) drop-shadow(0 0 0.8em #ff6969);
+  
 }
 
 #small_login {
@@ -132,7 +133,9 @@
   border-right: none;
   border-color: #64666c;
   padding-left: 1em;
-  -border-top-width: 0.1em;
+  border-top-width: 0.15em;
+  border-left-width: 0.15em;
+  box-shadow: none;
 
   color: white;
 }
@@ -140,10 +143,18 @@
 #user_session_login_small:focus, #user_session_password_small:focus {
   outline: none;
   box-shadow: 0 0 0 2px #d50b11;
+  background: linear-gradient(to bottom, #111111, #3c0001);
+  border-right: solid #111111 0.3em;
+  border-bottom: solid #111111 0.3em;
 }
 
 #small_login dl {
-  height: 6.6em;
+  height: 7.7em;
+}
+
+#small_login dt {
+  margin-bottom: 0.3em;
+  color: white;
 }
 
 #small_login dd {
@@ -168,8 +179,4 @@
   background-position: right bottom;
   height: 6em;
   align-content: end;
-}
-
-#small_login dt {
-  color: white;
 }
