@@ -141,26 +141,22 @@
   opacity: 0;
   width: 22em;
   letter-spacing: 0.02em;
-  text-shadow:
-    0.05em 0.05em 0 #a24247,
-    -0.05em -0.05em 0 #a24247;
+  text-shadow: 0.075em 0.075em 0 black;
   transform: translate(1em);
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.05);
   /*background-color: transparent;*/
-  background-image: 
-    url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd6iy8p-22b33d93-e395-476e-bd0c-6e085ca4a0ac.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ2aXk4cC0yMmIzM2Q5My1lMzk1LTQ3NmUtYmQwYy02ZTA4NWNhNGEwYWMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lMMYRivtpt-33CtAe8rwmzF6PrS9nhe_sI9cPaGkjAU'),
-    repeating-linear-gradient(
-      to bottom,
-      rgba(234 234 234 / 20%) 0px,
-      rgba(234 234 234 / 20%) 1.5px,
-      rgba(200 200 200 / 20%) 1.5px,
-      rgba(200 200 200 / 20%) 3px
-    );
-  background-size: 87%, 100% 6px;
-  background-repeat: no-repeat, repeat;
-  background-position: bottom -3em right -6.9em, 0 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(234 234 234 / 20%) 0px,
+    rgba(234 234 234 / 20%) 1.5px,
+    rgba(200 200 200 / 20%) 1.5px,
+    rgba(200 200 200 / 20%) 3px
+  );
+  background-size: 100% 6px;
+  background-repeat: repeat;
+  background-position: 0 0;
   
   border: solid 0.15em #a24247;
   box-shadow:
@@ -171,6 +167,23 @@
   visibility: hidden;
 
   transition: opacity 0.3s linear , all 0.4s ease-out;
+}
+
+#small_login::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 22%;
+  height: 100%;
+
+  background-image: url('https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/login/sora_idle.gif?raw=true');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+  filter: drop-shadow(0 0 0.4em #c8baba);
+  pointer-events: none;
 }
 
 .open + #small_login {
@@ -213,6 +226,7 @@
   box-shadow: none;
   padding-left: 1em;
   color: white !important;
+  font-weight: bold;
 }
 
 #user_session_login_small:focus, #user_session_password_small:focus, #site_search:focus {
@@ -229,9 +243,9 @@
 
 #small_login dt {
   margin-bottom: 0.3em;
-  color: black;
-  font-weight: bold;
   margin-left: 1.3em;
+  color: white;
+  font-weight: bold;
 }
 
 #small_login dd {
@@ -252,8 +266,7 @@
   border-radius: 0;
   border-bottom: solid 0.2em;
   border-image: linear-gradient(to right, #111111 30%, transparent 70%) 1;
-  
-  color: black;
+  color: white;
   font-weight: bold;
   background: linear-gradient(to right, transparent 20%, #a24247 55%, transparent 80%);
   background-size: 170%;
@@ -303,8 +316,9 @@
 #small_login .submit input[type="submit"] {
   padding-top: 0.4em;
   padding-left: 1em;
-  padding-right: 2.5em;  
-  color: white;
+  padding-right: 2.5em;
+
+  color: #fefcff;
   font-weight: bold;
   text-shadow: 0.075em 0.075em 0 black;
 
@@ -320,7 +334,8 @@
     linear-gradient(135deg, #a63a46 0, #a63a46 13%, transparent 5%) padding-box,
     linear-gradient(to bottom, #1f0000 40%, #910000) padding-box,
     linear-gradient(135deg, transparent 10%, #a63a46 0) border-box;
-    transition: text-shadow 0.2s linear;
+
+  transition: text-shadow 0.2s linear;
 }
 
 #small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus {
@@ -328,8 +343,8 @@
   text-shadow: 0 0 0.3em white;
 }
 
-#small_login li a {  
-  color: black;
+#small_login li a {
+  color: white !important;
   font-weight: bold;
 }
 
