@@ -4,6 +4,7 @@
   background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
   background-size: auto 100%;
   background-position: center;
+  transition: background-position 0.5s ease;
 }
 
 #header::before {
@@ -16,7 +17,16 @@
   background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/sora.png');
   background-repeat: no-repeat;
   background-size: 20em;
-  background-position: bottom;
+  background-position: calc(50%) bottom;
+  transition: background-position 0.5s ease;
+}
+
+#header:has(.user.actions.open) {
+  background-position: calc(50% - 10em) center;
+}
+
+#header:has(.user.actions.open)::before {
+  background-position: calc(100% - 18em) bottom;
 }
 
 #header .heading {
@@ -157,7 +167,6 @@
   background-size: 100% 6px;
   background-repeat: repeat;
   background-position: 0 0;
-  
   border: solid 0.15em #a24247;
   box-shadow:
     inset 0 0 0 0.05em #770000,
@@ -165,7 +174,6 @@
     0 0 1.5em #a24247;
   border-radius: 0.5em;
   visibility: hidden;
-
   transition: opacity 0.3s linear , all 0.4s ease-out;
 }
 
