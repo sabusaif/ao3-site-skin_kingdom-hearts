@@ -1,14 +1,39 @@
 :root {
-  --test: red;
+  --black: #0c0c0c;
+  --medium-black: #111111;
+  --light-black: #1f0000;
+  --red-black: #3c0001;
+  --gray: #64666c;
+  --light-gray: #9d9d9d;
+  --red-gray: #c8baba;
+  --gray-semi-opacity: #585858ad;
+  --white-semi-opacity: #dbdbdbcc;
+  --white: #fefcff;
+  --dark-red: #770000;
+  --dark-red2: #910000;
+  --gray-red: #8e4141;
+  --gray-red2: #a24247;
+  --gray-red3: #a63a46;
+  --red: #d50b11;
+  --light-red: #ff6969;
+  --light1: #c17446;
+  --light2: #fdc94e;
+  --light3: #fdc94e;
+  --light4: #fdf9b2;
+  --transparent1: rgba(234 234 234 / 20%);
+  --transparent2: rgba(200 200 200 / 20%);
+  --transparent3: rgba(255, 255, 255, 0.05);
+  
 }
 
 #header {
   position: relative;
-  background-color: #0c0c0c;
+  background-color: var(--black);
   background-image: url('https://raw.githubusercontent.com/sabusaif/AO3-Site-Skin_Kingdom-Hearts/refs/heads/main/images/header/background.jpg');
   background-size: auto 100%;
   background-position: center;
   transition: background-position 0.5s ease;
+  margin: 0;
 }
 
 #header::before {
@@ -101,15 +126,15 @@
 }
 
 #login #login-dropdown:hover, #header .actions #login-dropdown:focus {
-  background-color: #dbdbdbcc !important;
-  color: #111111;
+  background-color: var(--white-semi-opacity) !important;
+  color: var(--medium-black);
   outline: none;
   box-shadow:
-    inset 0 0 0 0.05em #770000,
-    0 0 0 0.15em #a24247,
-    0 0 0 0.2em #770000,
-    0 0 1.5em #a24247;
-  text-shadow: 0 0 0.2em #585858ad;
+    inset 0 0 0 0.05em var(--dark-red),
+    0 0 0 0.15em var(--gray-red2),
+    0 0 0 0.2em var(--dark-red),
+    0 0 1.5em var(--gray-red2);
+  text-shadow: 0 0 0.2em var(--gray-semi-opacity);
 }
 
 #login .open #login-dropdown {
@@ -147,7 +172,7 @@
 }
 
 #login .open #login-dropdown:hover {
-  filter: drop-shadow(0 0 0.8em #ff6969);
+  filter: drop-shadow(0 0 0.8em var(--light-red));
 }
 
 #small_login {
@@ -159,23 +184,23 @@
   transform: translate(1em);
   padding: 0.475em 0.5em 0.475em 0.5em;
   margin: 1em 1em 0 0;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--transparent3);
   /*background-color: transparent;*/
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(234 234 234 / 20%) 0px,
-    rgba(234 234 234 / 20%) 1.5px,
-    rgba(200 200 200 / 20%) 1.5px,
-    rgba(200 200 200 / 20%) 3px
+    var(--transparent1) 0px,
+    var(--transparent1) 1.5px,
+    var(--transparent2) 1.5px,
+    var(--transparent2) 3px
   );
   background-size: 100% 6px;
   background-repeat: repeat;
   background-position: 0 0;
-  border: solid 0.15em #a24247;
+  border: solid 0.15em var(--gray-red2);
   box-shadow:
-    inset 0 0 0 0.05em #770000,
-    0 0 0 0.05em #770000,
-    0 0 1.5em #a24247;
+    inset 0 0 0 0.05em var(--dark-red),
+    0 0 0 0.05em var(--dark-red),
+    0 0 1.5em var(--gray-red2);
   border-radius: 0.5em;
   visibility: hidden;
   transition: opacity 0.3s linear , all 0.4s ease-out;
@@ -194,7 +219,7 @@
   background-repeat: no-repeat;
   background-position: bottom right;
 
-  filter: drop-shadow(0 0 0.4em #c8baba);
+  filter: drop-shadow(0 0 0.4em var(--red-gray));
   pointer-events: none;
 }
 
@@ -224,7 +249,7 @@
 
 #user_session_login_small, #user_session_password_small, #site_search {
   background: none;
-  background-color: #111111;
+  background-color: var(--medium-black);
   
   border-radius: 0;
   border-top-left-radius: 1em;
@@ -232,8 +257,8 @@
   
   border-bottom: none;
   border-right: none;
-  border-top: solid 0.15em #64666c !important;
-  border-left: solid 0.15em #64666c !important;
+  border-top: solid 0.15em var(--gray) !important;
+  border-left: solid 0.15em var(--gray) !important;
   
   box-shadow: none;
   padding-left: 1em;
@@ -243,10 +268,10 @@
 
 #user_session_login_small:focus, #user_session_password_small:focus, #site_search:focus {
   outline: none !important;
-  box-shadow: 0 0 0 2px #d50b11;
-  background: linear-gradient(to bottom, #111111, #3c0001);
-  border-right: solid #111111 0.3em !important;
-  border-bottom: solid #111111 0.3em !important;
+  box-shadow: 0 0 0 2px var(--red);
+  background: linear-gradient(to bottom, var(--medium-black), var(--red-black));
+  border-right: solid var(--medium-black) 0.3em !important;
+  border-bottom: solid var(--medium-black) 0.3em !important;
 }
 
 #small_login dl {
@@ -277,10 +302,10 @@
   border: none;
   border-radius: 0;
   border-bottom: solid 0.2em;
-  border-image: linear-gradient(to right, #111111 30%, transparent 70%) 1;
+  border-image: linear-gradient(to right, var(--medium-black) 30%, transparent 70%) 1;
   color: white;
   font-weight: bold;
-  background: linear-gradient(to right, transparent 20%, #a24247 55%, transparent 80%);
+  background: linear-gradient(to right, transparent 20%, var(--gray-red2) 55%, transparent 80%);
   background-size: 170%;
   background-position: left;
   transition: background-position 0.5s ease-in-out;
@@ -303,22 +328,22 @@
   height: 1.886em;
   width: 1.886em;
   background-color: #e0e0e0;
-  /*border: solid #111111 0.3em;*/
+  /*border: solid var(--medium-black) 0.3em;*/
   box-shadow:
-    inset 0 0 0 0.4em #111111,
-    inset 0 0.5em 0 0 #9d9d9d,
-    inset 0.5em 0 0 0 #9d9d9d,
+    inset 0 0 0 0.4em var(--medium-black),
+    inset 0 0.5em 0 0 var(--light-gray),
+    inset 0.5em 0 0 0 var(--light-gray),
     inset 0 0 0 0 rgba(0,0,0,0);
   border-radius: 0;
 }
 
 #small_login .submit input[type="checkbox"]:checked {  
   box-shadow:
-    inset 0 0 0.5em 0.2em #111111,
-    inset 0 0 0 0.4em #c17446,
-    inset 0 0.5em 0 0 #fdc94e,
-    inset 0.5em 0 0 0 #fdc94e;
-  background-color: #fdf9b2;
+    inset 0 0 0.5em 0.2em var(--medium-black),
+    inset 0 0 0 0.4em var(--light1),
+    inset 0 0.5em 0 0 var(--light2),
+    inset 0.5em 0 0 0 var(--light3);
+  background-color: var(--light4);
 }
 
 #small_login .submit input:hover, #small_login .submit input:focus {
@@ -330,7 +355,7 @@
   padding-left: 1em;
   padding-right: 2.5em;
 
-  color: #fefcff;
+  color: var(--white);
   font-weight: bold;
   text-shadow: 0.075em 0.075em 0 black;
 
@@ -343,9 +368,9 @@
   background:
     url('https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/login/keyblade_icon.png?raw=true') no-repeat right 0.5em center / 1.5em,
 
-    linear-gradient(135deg, #a63a46 0, #a63a46 13%, transparent 5%) padding-box,
-    linear-gradient(to bottom, #1f0000 40%, #910000) padding-box,
-    linear-gradient(135deg, transparent 10%, #a63a46 0) border-box;
+    linear-gradient(135deg, var(--gray-red3) 0, var(--gray-red3) 13%, transparent 5%) padding-box,
+    linear-gradient(to bottom, var(--light-black) 40%, var(--dark-red2)) padding-box,
+    linear-gradient(135deg, transparent 10%, var(--gray-red3) 0) border-box;
 
   transition: text-shadow 0.2s linear;
 }
@@ -366,8 +391,17 @@
   box-shadow: inset 0 -0.1em 0 white;
 }
 
+#header .primary {
+  background: linear-gradient(180deg, black, red);
+}
+
+#header .primary .dropdown {
+  background-color: black;
+  margin: 0.3em 0.15em;
+}
+
 #header .primary a {
-  padding: 0.8em 0.75em;
+  padding: 0.5em 0.75em;
 }
 
 #site_search {
@@ -379,6 +413,8 @@
 #site_search:focus {
   margin: 0.36em 0.429em !important;
 }
+
+
 
 .summary .heading {
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ceb42da1-3637-4312-816f-30e7ecea3189/dd8mpzh-00896cbc-f186-4349-b4c2-d065fcbe6ae7.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZWI0MmRhMS0zNjM3LTQzMTItODE2Zi0zMGU3ZWNlYTMxODkvZGQ4bXB6aC0wMDg5NmNiYy1mMTg2LTQzNDktYjRjMi1kMDY1ZmNiZTZhZTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DR1_srJbgDUtdVvyMZLO-xfSomIipbum6hhR24noo0s');
@@ -399,7 +435,7 @@
 }
 
 ::selection {
-  background: #8e4141;
+  background: var(--gray-red);
   color: white;
   text-shadow: none;
 }
