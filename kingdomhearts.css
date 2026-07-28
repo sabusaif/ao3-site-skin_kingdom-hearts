@@ -92,16 +92,6 @@
   transform: translate(-50%);
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
-  #header h1 a::before {
-    width: 17em;
-    height: 5.5em;
-    top: 59%;
-    bottom: 6%;
-    background-size: 90%;
-  }
-}
-
 #header .logo, #header h1 sup, #header h1 a span {
   display: none;
 }
@@ -268,7 +258,7 @@
 
 #user_session_login_small:focus, #user_session_password_small:focus, #site_search:focus {
   outline: none !important;
-  box-shadow: 0 0 0 2px var(--red);
+  box-shadow: 0 0 0 0.15em var(--red);
   background: linear-gradient(to bottom, var(--medium-black), var(--red-black));
   border-right: solid var(--medium-black) 0.3em !important;
   border-bottom: solid var(--medium-black) 0.3em !important;
@@ -392,7 +382,11 @@
 }
 
 #header .primary {
-  background: linear-gradient(180deg, black, red);
+  background:
+    linear-gradient(180deg, #0f0f0f, transparent 70%),
+    url("https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/nav/nav_background.png?raw=true");
+
+  background-size: cover;
 }
 
 #header .primary .dropdown {
@@ -400,8 +394,10 @@
   margin: 0.3em 0.15em;
 }
 
-#header .primary a {
+#header .primary .dropdown-toggle {
   padding: 0.5em 0.75em;
+  border: solid 0.08em #695d20;
+  border-bottom: none;
 }
 
 #site_search {
@@ -411,9 +407,8 @@
 }
 
 #site_search:focus {
-  margin: 0.36em 0.429em !important;
+  margin-bottom: 0.22em !important;
 }
-
 
 
 .summary .heading {
@@ -438,4 +433,22 @@
   background: var(--gray-red);
   color: white;
   text-shadow: none;
+}
+
+@media only screen and (max-width: 42em), handheld {
+  #header h1 a::before {
+    width: 17em;
+    height: 5.5em;
+    top: 59%;
+    bottom: 6%;
+    background-size: 90%;
+  }
+  
+  #header .primary > li:first-of-type {
+    margin-left: 1em !important;
+  }
+
+  #site_search:focus {
+    margin-bottom: 0.228em !important;
+  }
 }
