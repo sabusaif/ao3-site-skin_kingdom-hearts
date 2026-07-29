@@ -341,11 +341,11 @@
   background-color: var(--light4);
 }
 
-#small_login .submit input:hover, #small_login .submit input:focus {
+#small_login .submit input:hover, #small_login .submit input:focus, #search .submit input[type="submit"]:hover, #search .submit input[type="submit"]:focus {
   cursor: pointer;
 }
 
-#small_login .submit input[type="submit"] {
+#small_login .submit input[type="submit"], #search .submit input[type="submit"] {
   padding-top: 0.4em;
   padding-left: 1em;
   padding-right: 2.5em;
@@ -354,15 +354,14 @@
   font-weight: bold;
   text-shadow: 0.075em 0.075em 0 black;
 
-  border: solid 0.2em transparent;
-  border-left-width: 0.8em;
+  border: solid 0.2em transparent !important;
+  border-left-width: 0.8em !important;
   border-radius: 0;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   
   background:
     url('https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/login/keyblade_icon.png?raw=true') no-repeat right 0.5em center / 1.5em,
-
     linear-gradient(135deg, var(--gray-red3) 0, var(--gray-red3) 13%, transparent 5%) padding-box,
     linear-gradient(to bottom, var(--light-black) 40%, var(--dark-red2)) padding-box,
     linear-gradient(135deg, transparent 10%, var(--gray-red3) 0) border-box;
@@ -370,7 +369,7 @@
   transition: text-shadow 0.2s linear;
 }
 
-#small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus {
+#small_login .submit input[type="submit"]:hover, #small_login .submit input[type="submit"]:focus, #search .submit input[type="submit"]:hover, #search .submit input[type="submit"]:focus {
   box-shadow: none;
   text-shadow: 0 0 0.3em white;
 }
@@ -389,9 +388,10 @@
 #header .primary {
   background:
     linear-gradient(180deg, #0f0f0f, transparent 70%),
-    url("https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/nav/nav_background.png?raw=true");
+    url("https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/nav/kh_nav_background.png?raw=true") left 3.15em;
 
-  background-size: cover;
+  background-size: 56.5em;
+  box-shadow: none;
 }
 
 #header .primary .dropdown {
@@ -419,6 +419,33 @@
   background-color: #dea10280;
   color: white !important;
   text-shadow: 0 0 2px black !important;
+}
+
+#header .primary .dropdown-menu {
+  padding-top: 0.5em;
+  border-left: solid 0.3em #bb7c00;
+  border-bottom: solid 0.3em #bb7c00;
+  background: url("https://github.com/sabusaif/ao3-site-skin_kingdom-hearts/blob/main/images/header/nav/kh_nav_background.png?raw=true") top left;
+  background-size: 56.5em;
+  background-position: 0.9em 0.5em;
+  background-repeat: repeat-x;
+  box-shadow: none;
+}
+
+#header .primary > li:first-of-type .dropdown-menu {
+  background-position-x: -2.28em;
+}
+
+#header .primary > li:nth-child(2) .dropdown-menu {
+  background-position: 0.84em 0.5em;
+}
+
+#header .primary > li:nth-child(3) .dropdown-menu {
+  background-position: 1.83em 0.5em;
+}
+
+#header .primary .dropdown-menu li a {
+  color: white !important;
 }
 
 #site_search {
