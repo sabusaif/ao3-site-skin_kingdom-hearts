@@ -408,6 +408,8 @@
   border: solid 0.095em #695d20;
   border-bottom: none;
   transition: all 0.1s linear;
+  background: none;
+  color: white !important;
 }
 
 #header .primary .dropdown-toggle:hover, #header .primary .dropdown-toggle:focus, #header .primary .dropdown:hover .dropdown-toggle {
@@ -416,7 +418,7 @@
     inset 0.03em 0.03em 0.05em #bb7c00,
     inset -0.03em 0 0.05em #bb7c00,
     0 0 0.4em #ffd842;
-  background-color: #dea10280;
+  background-color: #dea10280 !important;
   color: white !important;
   text-shadow: 0 0 2px black !important;
 }
@@ -437,16 +439,29 @@
 }
 
 #header .primary > li:nth-child(2) .dropdown-menu {
-  background-position: 0.84em 0.5em;
+  background-position-x: -8.57em;
 }
 
 #header .primary > li:nth-child(3) .dropdown-menu {
-  background-position: 1.83em 0.5em;
+  background-position-x: -1.34em;
+}
+
+#header .primary > li:nth-child(4) .dropdown-menu {
+  background-position-x: -6.45em;
+}
+
+#header .primary .dropdown-menu li {
+  border-bottom: 0.2em solid #000000;
+  background: url("https://roboloid.github.io/khux/images/assets/title/userTitle-title_1203.png") right;
+  background-size: contain;
+  background-position-y: 0.49em;
+  background-repeat: no-repeat;
 }
 
 #header .primary .dropdown-menu li a {
   color: white !important;
 }
+
 
 #site_search {
   margin: 0.5em 0.429em !important;
@@ -494,6 +509,11 @@
   
   #header .primary > li:first-of-type {
     margin-left: 1em !important;
+  }
+
+  #header .primary .dropdown-menu {
+    border: none;
+    background-position: left 0.55em !important;
   }
 
   #site_search:focus {
